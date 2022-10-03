@@ -363,6 +363,8 @@ textarea::placeholder {
     line-height: 16px;
     letter-spacing: 0.02em;
     color: var(--main-font-color);
+
+    transition: color 250ms var(--animation-timing);
   }
 
 .nav-list .item + .item {
@@ -378,7 +380,6 @@ textarea::placeholder {
 .nav-list a:hover,
 .nav-list a:focus {
     color: var(--link-color);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
 .nav-list .link::after {
@@ -417,8 +418,9 @@ textarea::placeholder {
 .info-list-contacts a:hover,
 .info-list-contacts a:focus {
     color: var(--link-color);
-    transition: transform 250ms var(--animation-timing);
+    transition: color 250ms var(--animation-timing);
   }
+
 .nav-list-flex .link.current {
     color: var(--link-color);
   }
@@ -662,14 +664,15 @@ textarea::placeholder {
     height: 44px;
     color: var(--icon-color);
     border-radius: 50%;
-  }
+
+    transition: background-color 250ms var(--animation-timing);
+}
   
 .social-links:hover,
 .social-links:focus {
     background-color: var(--link-color);
     color: var(--main-light-color);
     outline: none;
-    transition: transform 250ms var(--animation-timing);
   }
   
 .soc-links-svg,
@@ -716,6 +719,9 @@ textarea::placeholder {
     color: var(--icon-color);
     border: 1px solid var(--icon-color);
     border-radius: 4px;
+
+    transition: color 250ms var(--animation-timing),
+    border-color 250ms var(--animation-timing);
 }
   
 .clients-item:nth-child(6n) {
@@ -731,7 +737,6 @@ textarea::placeholder {
     color: var(--link-color);
     border: 1px solid var(--link-color);
     outline: none;
-    transition: transform 250ms var(--animation-timing);
   }
   
 .clients-svg {
@@ -763,12 +768,18 @@ footer {
     background: var(--main-dark-color);
     padding-top: 60px;
     padding-bottom: 60px;
-  }
+}
+
+footer-bg {
+  margin-right: 70px;
+  transition: background-color 250ms var(--animation-timing);
+}
+
 .footer-bg a:hover,
 .footer-bg a:focus {
     color: var(--link-color);
-    transition: transform 250ms var(--animation-timing);
-  }
+}
+
 .webstudio-button {
     display: block;
     margin-bottom: 20px;
@@ -778,10 +789,12 @@ footer {
     line-height: 31px;
     letter-spacing: 0.03em;
     color: var(--link-color);
-  }
+}
+
 .span-studio-button {
     color: var(--main-light-color);
-  }
+}
+
 .footer-list-item {
     display: block;
     font-style: normal;
@@ -847,13 +860,15 @@ footer {
     color: var(--main-light-color);
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-  }
+
+    transition: color 250ms var(--animation-timing),
+    background-color 250ms var(--animation-timing);
+}
   
 .footer-social-links:hover,
 .footer-social-links:focus {
     background-color: var(--link-color);
     outline: none;
-    transition: transform 250ms var(--animation-timing);
   }
   
 .social-svg {
@@ -885,14 +900,18 @@ footer {
     color: var(--main-font-color);
     border: 1px solid transparent;
     border-radius: 4px;
-  }
+
+    transition: background 250ms var(--animation-timing),
+    color 250ms var(--animation-timing),
+    box-shadow 250ms var(--animation-timing);
+}
+
 .portfolio-link:hover,
 .portfolio-link:focus {
     background: var(--link-color);
     color: var(--main-light-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-      0px 2px 2px rgba(0, 0, 0, 0.12);
-    transition: transform 250ms var(--animation-timing);  
+      0px 2px 2px rgba(0, 0, 0, 0.12); 
   }
   
 .portfolio-projects .item + .item {
@@ -909,6 +928,8 @@ footer {
     display: block;
     text-decoration: none;
     color: currentColor;
+
+    transition: box-shadow 250ms var(--animation-timing);
   }
   
 .card-link:hover,
@@ -916,8 +937,7 @@ footer {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
       1px 4px 6px rgba(0, 0, 0, 0.16);
     outline: none;
-    transition: transform 250ms var(--animation-timing);
-  }
+}
   
 /*.project-container {
     padding: 20px 24px;
