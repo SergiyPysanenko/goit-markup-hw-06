@@ -665,7 +665,8 @@ textarea::placeholder {
     color: var(--icon-color);
     border-radius: 50%;
 
-    transition: background-color 250ms var(--animation-timing);
+    transition: color 250ms var(--animation-timing), 
+    background-color 250ms var(--animation-timing);
 }
   
 .social-links:hover,
@@ -673,12 +674,12 @@ textarea::placeholder {
     background-color: var(--link-color);
     color: var(--main-light-color);
     outline: none;
-  }
+}
   
-.soc-links-svg,
-.soc-links-svg:hover {
-    fill: currentColor;
-  }
+.soc-links-svg {
+  fill: var(--icon-color);
+  fill: currentColor;
+}
   
 .clients {
     padding-top: 94px;
