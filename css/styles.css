@@ -100,12 +100,13 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 528px;
-    max-height: 581px;
+    width: 528px;
+    height: 581px;
     background: var(--white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms cubic-bezier(0.6, 0.14, 0.21, 1.43);
 }
@@ -137,12 +138,12 @@ header {
   height: 11px;
 }
 
-.button-close:hover,
-.button-close:focus  {
-  fill: currentColor;
+.button-close:hover .icon,
+.button-close:focus .icon {
+  fill: var(--link-color);
   cursor: pointer;
-  transition-duration: 250ms;
-  transition-timing-function: var(--animating-timing);
+  /*transition-duration: 250ms;
+  transition-timing-function: var(--animating-timing);*/
 }
 
 /*.icon { 
@@ -186,7 +187,7 @@ header {
 }
 
 form {
-  padding: 40px 40px;
+  margin: 40px 40px;
 }
 
 .form-field {
@@ -212,9 +213,9 @@ form {
 
 .text-form {
   margin-bottom: 4px;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.2;
   letter-spacing: 0.01em;
 
   color: var(--secondary-font-color);
@@ -262,8 +263,13 @@ form {
   transition-duration: 250ms;
   transition-timing-function: var(--animating-timing);
 }
-
-.input-checkbox:checked + .check-box::after {
+.input-checkbox:focus-visible > .checkbox-icon {
+  --color3: var(--link-color);
+}
+.input-checkbox:focus-visible {
+  outline-color: var(--link-color);
+}
+/*.input-checkbox:checked + .check-box::after {
   box-shadow: 0 0 0 2px var(--link-color);
   background-color: var(--link-color);
 
@@ -271,7 +277,7 @@ form {
 
   transition-duration: 250ms;
   transition-timing-function: var(--animating-timing);
-}
+}*/
 
 .checkbox-text {
   margin-left: 7px;
@@ -296,11 +302,18 @@ form {
   text-decoration: underline;
 }
 
+.form-taxt-checkbox {
+  position: relative;
+  color: var(--secondary-font-color);
+  margin-left: 7px;
+}
+
 textarea {
-  padding: 12px 16px;
+  padding: 12px;
   height: 120px;
   display: flex;
   flex-direction: column;
+
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
@@ -322,14 +335,43 @@ textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.lable-checkbox {
+.label-checkbox {
   display: flex;
+  justify-content: center;
   align-items: center;
+
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.checkbox-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-133%, -51%);
+  --color1: var(--white);
+  --color2: var(--white);
+  --color3: var(--logo-color);
+}
+
+.checkbox-icon:focus {
+  --color1: var(--white);
+  --color2: var(--white);
+  --color3: var(--logo-color);
+}
+
+.input-checkbox:checked ~ .form-taxt-checkbox > .checkbox-icon {
+  --color1: var(--link-color);
+  --color2: var(--white);
+  --color3: var(--link-color);
+}
+
+.input-checkbox:focus ~ .form-taxt-checkbox > .checkbox-icon {
+  --color3: var(--link-color);
 }
 
 .modal-button {
   position: relative;
-  top: -15px;
+  bottom: 40px;
   background: var(--link-color);
   color: var(--main-light-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
